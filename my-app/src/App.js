@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [ListTodo, setListTodo] = useState(JSON.parse(localStorage.getItem('ListTodo')));
   const [current, setCurrent] = useState(1)
+  const regex = /^\w/
   useEffect(()=>{
     localStorage.setItem('ListTodo',JSON.stringify(ListTodo))
   },[ListTodo])
@@ -26,11 +27,19 @@ function App() {
       toast.error("This to do already exits!!!")
     }
     else{
-      const List = [...ListTodo]
-      const id = List.length + 1
-      List.push({id:id,title:value})
-      setListTodo(List)
-      toast.success("Add Success!!!")
+      if(!(regex.test(value))){
+        toast.error("The beginning of character must be a character or a number!!!")
+      }
+      else{
+        const List = [...ListTodo]
+        const id = List.length + 1
+        List.push({id:id,title:value})
+        setListTodo(List)
+        toast.success("Add Success!!!")
+
+      }
+   
+    
     }
    
   }
@@ -54,12 +63,18 @@ function App() {
       toast.error("This to do already exits!!!")
     }
     else{
-      const List = [...ListTodo]
-      const ItemEdit = List.filter((value)=> value.id === id)
-      const NewItemEdit = {...ItemEdit[0],title:value}
-      List.splice(id-1,1,NewItemEdit)
-      setListTodo(List)
-      toast.success("Edit Success!!!")
+      if(!(regex.test(value))){
+        toast.error("The beginning of character must be a character or a number!!!")
+      }
+      else{
+        const List = [...ListTodo]
+        const ItemEdit = List.filter((value)=> value.id === id)
+        const NewItemEdit = {...ItemEdit[0],title:value}
+        List.splice(id-1,1,NewItemEdit)
+        setListTodo(List)
+        toast.success("Edit Success!!!")
+      }
+      
     }
     
   }
