@@ -23,7 +23,7 @@ function App() {
 
   const handleAdd = (value)=>{
     if(!checkItem(value)){
-      toast.error("This to do alreadt exits!!!")
+      toast.error("This to do already exits!!!")
     }
     else{
       const List = [...ListTodo]

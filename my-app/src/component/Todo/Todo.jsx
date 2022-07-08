@@ -10,6 +10,7 @@ export default function Todo(props) {
     const [todo, setTodo] = useState("")
     const clickEdit = ()=>{
       setShow(!show)
+      setTodo("")
     }
 
     const handleChange = (e)=>{
