@@ -1,0 +1,12 @@
+.Add{
+
+    margin-bottom: 20px;
+}
+label{
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.Add .ant-input {
+    width: 70%;
+}

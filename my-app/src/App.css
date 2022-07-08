@@ -1,0 +1,29 @@
+body{
+    background: linear-gradient(#ee9ca7 , #ffdde1);
+    font-family: Comic Sans, Comic Sans MS, cursive;
+}
+h1{
+    text-align: center;
+    font-size: 100px;
+}
+.App{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.TodoList{
+    width: 40%;
+    border-radius: 20px;
+    padding: 20px 50px;
+    background: linear-gradient(#ef3b36 , #ffffff);
+}
+.Todo{
+    width: 100%;
+    text-align: center;
+    padding: 5px 10px;
+}
+.List{
+    padding: 20px 20px;
+    background-color:white;
+    border-radius: 20px;
+}
