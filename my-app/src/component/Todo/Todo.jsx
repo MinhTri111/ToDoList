@@ -24,8 +24,6 @@ export default function Todo(props) {
         else{
             toast.error("This field is required!!!")
         }
-    
-
     }
     const handleDel = (id)=>{
         handleDelete(id)
