@@ -3,7 +3,6 @@ import { DeleteOutlined, EditOutlined, CheckOutlined } from '@ant-design/icons';
 import { Button, Tooltip, Input } from 'antd';
 import './todo.css';
 import { useState } from 'react';
-import { toast } from 'react-toastify';
 export default function Todo(props) {
     const { value, id, deleteItem, updateItem } = props;
     const [showInput, setShowInput] = useState(true);
@@ -21,7 +20,6 @@ export default function Todo(props) {
     };
     const handleDel = (id) => {
         deleteItem(id);
-        toast.success('Delete Success!!!');
         setShowInput(true);
     };
     return (
